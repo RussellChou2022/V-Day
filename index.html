@@ -1,0 +1,297 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>valentine_request.py</title>
+
+<style>
+
+:root{
+
+  --bg:#0b1020;
+
+  --panel:#0f1730;
+
+  --panel2:#0c1328;
+
+  --text:#d7e2ff;
+
+  --muted:#8ea2d6;
+
+  --accent:#ff4d7d;
+
+  --accent2:#7cf7c7;
+
+  --shadow:0 16px 40px rgba(0,0,0,.35);
+
+  --radius:18px;
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+}
+
+*{box-sizing:border-box}
+
+body{
+
+  margin:0;
+
+  min-height:100vh;
+
+  display:grid;
+
+  place-items:center;
+
+  background:radial-gradient(900px 500px at 20% 10%, rgba(255,77,125,.2), transparent 60%), var(--bg);
+
+  color:var(--text);
+
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+
+  padding:28px;
+
+}
+
+.wrap{width:min(980px,100%);display:grid;gap:16px}
+
+.badge{
+
+  padding:10px 14px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  font-family:var(--mono);
+
+  color:var(--muted);
+
+}
+
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+
+.panel{
+
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+
+  border:1px solid rgba(255,255,255,.1);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+}
+
+.panelHeader{
+
+  padding:12px 14px;
+
+  background:rgba(0,0,0,.18);
+
+  font-family:var(--mono);
+
+  color:var(--muted);
+
+}
+
+.editor{
+
+  padding:16px;
+
+  font-family:var(--mono);
+
+  background:linear-gradient(180deg,var(--panel),var(--panel2));
+
+}
+
+.line{white-space:pre}
+
+.kw{color:#7aa2f7}
+
+.fn{color:#a78bfa}
+
+.str{color:#7cf7c7}
+
+.cm{color:#8ea2d6}
+
+.heart{color:var(--accent)}
+
+.terminal{
+
+  padding:14px;
+
+  background:#070b16;
+
+  font-family:var(--mono);
+
+  font-size:13px;
+
+}
+
+.side{padding:16px}
+
+.title{font-family:var(--mono);font-size:18px;margin-bottom:10px}
+
+.subtitle{color:var(--muted);margin-bottom:10px}
+
+.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+button{
+
+  border:none;
+
+  border-radius:14px;
+
+  padding:12px 14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+.yes{background:linear-gradient(135deg,var(--accent),#ff8fab);color:#0a0f1f}
+
+.card{
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:16px;
+
+  padding:14px;
+
+  margin-top:14px;
+
+}
+
+.footer{text-align:center;color:#8ea2d6;font-family:var(--mono);font-size:12px}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<div class="wrap">
+
+  <div class="badge">mode: cute • target: Melissa Leung 💖</div>
+
+
+
+  <div class="grid">
+
+    <div class="panel">
+
+      <div class="panelHeader">valentine_request.py</div>
+
+      <div class="editor">
+
+<div class="line"><span class="cm"># Melissa Leung, please review this PR 🥺👉👈</span></div>
+
+<div class="line"><span class="kw">def</span> <span class="fn">will_you_be_my_valentine</span>(name):</div>
+
+<div class="line">  plan = <span class="str">"Dinner + cozy walk + dessert"</span></div>
+
+<div class="line">  <span class="kw">return</span> <span class="str">f"Hey {name}, will you go out with me on Valentine’s Day?"</span></div>
+
+<div class="line"></div>
+
+<div class="line">message = will_you_be_my_valentine(<span class="str">"Melissa Leung"</span>)</div>
+
+<div class="line"><span class="kw">print</span>(message, "<span class="heart">♥</span>")</div>
+
+      </div>
+
+      <div class="terminal">$ python valentine_request.py<br>
+
+Output: Hey Melissa Leung, will you go out with me on Valentine’s Day? ♥</div>
+
+    </div>
+
+
+
+    <div class="panel">
+
+      <div class="panelHeader">README.md</div>
+
+      <div class="side">
+
+        <div class="title">Choose dinner theme 🍽️</div>
+
+        <p class="subtitle">Pick your Valentine food style, Melissa ✨</p>
+
+
+
+        <div class="btnRow">
+
+          <button class="yes" onclick="sendChoice('Japanese 🍣')">Japanese 🍣</button>
+
+          <button class="yes" onclick="sendChoice('Chinese 🥟')">Chinese 🥟</button>
+
+          <button class="yes" onclick="sendChoice('Western 🍝')">Western 🍝</button>
+
+        </div>
+
+
+
+        <div id="foodResult" style="margin-top:10px;color:#8ea2d6;font-family:monospace;"></div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="footer">compiled with love • no bugs (hopefully)</div>
+
+</div>
+
+
+
+<script>
+
+function sendChoice(choice){
+
+  document.getElementById("foodResult").textContent =
+
+    "Choice selected: " + choice + " 💖 Sending to Russell...";
+
+
+
+  const phone = “0”742758106; // REPLACE WITH YOUR NUMBER
+
+  const text = encodeURIComponent(
+
+    "Hi Russell 😊 I choose " + choice + " for our Valentine’s date 💕"
+
+  );
+
+
+
+  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
