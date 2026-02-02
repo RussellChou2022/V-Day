@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'Apple Color Emoji'}
+    span.s2 {font: 12.0px 'Hiragino Sans'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;</p>
+<p class="p1">&lt;title&gt;valentine_request.py&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">:root{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--bg:#0b1020;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--panel:#0f1730;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--panel2:#0c1328;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--text:#d7e2ff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--muted:#8ea2d6;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--accent:#ff4d7d;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--accent2:#7cf7c7;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--shadow:0 16px 40px rgba(0,0,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--radius:18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;</p>
+<p class="p1">}</p>
+<p class="p1">*{box-sizing:border-box}</p>
+<p class="p1">body{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height:100vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>place-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:radial-gradient(900px 500px at 20% 10%, rgba(255,77,125,.2), transparent 60%), var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:system-ui,-apple-system,Segoe UI,Roboto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:28px;</p>
+<p class="p1">}</p>
+<p class="p1">.wrap{width:min(980px,100%);display:grid;gap:16px}</p>
+<p class="p1">.badge{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:10px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,.04);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:var(--mono);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--muted);</p>
+<p class="p1">}</p>
+<p class="p1">.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}</p>
+<p class="p1">.panel{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,.1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow:hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.panelHeader{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(0,0,0,.18);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:var(--mono);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:var(--muted);</p>
+<p class="p1">}</p>
+<p class="p1">.editor{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:var(--mono);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(180deg,var(--panel),var(--panel2));</p>
+<p class="p1">}</p>
+<p class="p1">.line{white-space:pre}</p>
+<p class="p1">.kw{color:#7aa2f7}</p>
+<p class="p1">.fn{color:#a78bfa}</p>
+<p class="p1">.str{color:#7cf7c7}</p>
+<p class="p1">.cm{color:#8ea2d6}</p>
+<p class="p1">.heart{color:var(--accent)}</p>
+<p class="p1">.terminal{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:#070b16;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family:var(--mono);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:13px;</p>
+<p class="p1">}</p>
+<p class="p1">.side{padding:16px}</p>
+<p class="p1">.title{font-family:var(--mono);font-size:18px;margin-bottom:10px}</p>
+<p class="p1">.subtitle{color:var(--muted);margin-bottom:10px}</p>
+<p class="p1">.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}</p>
+<p class="p1">button{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight:700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.yes{background:linear-gradient(135deg,var(--accent),#ff8fab);color:#0a0f1f}</p>
+<p class="p1">.card{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:rgba(255,255,255,.04);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid rgba(255,255,255,.08);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top:14px;</p>
+<p class="p1">}</p>
+<p class="p1">.footer{text-align:center;color:#8ea2d6;font-family:var(--mono);font-size:12px}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="badge"&gt;mode: cute • target: Melissa Leung <span class="s1">💖</span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="panelHeader"&gt;valentine_request.py&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="editor"&gt;</p>
+<p class="p1">&lt;div class="line"&gt;&lt;span class="cm"&gt;# Melissa Leung, please review this PR <span class="s1">🥺👉👈</span>&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;&lt;span class="kw"&gt;def&lt;/span&gt; &lt;span class="fn"&gt;will_you_be_my_valentine&lt;/span&gt;(name):&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;<span class="Apple-converted-space">  </span>plan = &lt;span class="str"&gt;"Dinner + cozy walk + dessert"&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;<span class="Apple-converted-space">  </span>&lt;span class="kw"&gt;return&lt;/span&gt; &lt;span class="str"&gt;f"Hey {name}, will you go out with me on Valentine’s Day?"&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;message = will_you_be_my_valentine(&lt;span class="str"&gt;"Melissa Leung"&lt;/span&gt;)&lt;/div&gt;</p>
+<p class="p1">&lt;div class="line"&gt;&lt;span class="kw"&gt;print&lt;/span&gt;(message, "&lt;span class="heart"&gt;<span class="s2">♥</span>&lt;/span&gt;")&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="terminal"&gt;$ python valentine_request.py&lt;br&gt;</p>
+<p class="p1">Output: Hey Melissa Leung, will you go out with me on Valentine’s Day? <span class="s2">♥</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="panelHeader"&gt;README.md&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="side"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="title"&gt;Choose dinner theme <span class="s1">🍽️</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="subtitle"&gt;Pick your Valentine food style, Melissa <span class="s1">✨</span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="btnRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="yes" onclick="sendChoice('Japanese <span class="s1">🍣</span>')"&gt;Japanese <span class="s1">🍣</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="yes" onclick="sendChoice('Chinese <span class="s1">🥟</span>')"&gt;Chinese <span class="s1">🥟</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="yes" onclick="sendChoice('Western <span class="s1">🍝</span>')"&gt;Western <span class="s1">🍝</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="foodResult" style="margin-top:10px;color:#8ea2d6;font-family:monospace;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="footer"&gt;compiled with love • no bugs (hopefully)&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">function sendChoice(choice){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("foodResult").textContent =</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Choice selected: " + choice + " <span class="s1">💖</span> Sending to Russell...";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const phone = “0”742758106; // REPLACE WITH YOUR NUMBER</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const text = encodeURIComponent(</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Hi Russell <span class="s1">😊</span> I choose " + choice + " for our Valentine’s date <span class="s1">💕</span>"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.open(`https://wa.me/${phone}?text=${text}`, "_blank");</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
